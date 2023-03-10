@@ -19,12 +19,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        return response()->json([
-            'message' => 'Inside the blog as an Admin!!!'
-        ]);
+        // return response()->json([
+        //     'message' => 'Inside the blog as an Admin!!!',
+        // ]);
 
-        # return view('blog.index')
-        #      ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+         return view('blog.index')
+            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 
     /**

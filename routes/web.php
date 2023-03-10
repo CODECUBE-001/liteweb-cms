@@ -19,19 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'index']);
 
 # Defining the resource's urls
-Route::resource('/blog', [PostsController::class, 'index']);
-
-
-
-
-
-
-
-
-
-
-
-
+//Route::resource('/blog', [PostsController::class, 'index']);
 
 # The Fallback Route
 Route::fallback( [PagesController::class, '__invoke']);
+
+#
