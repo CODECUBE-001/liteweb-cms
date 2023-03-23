@@ -11,15 +11,19 @@ class PagesController extends Controller
         return response()->json([
             'data' => null,
             'message' => 'This should be the landing page for the Home of the CMS blog!!',
-            'status' => false,
+            'status' => true,
         ]);    
     }
 
-    public function __invoke()
+        # Checking to see if my /blog works fine. and yes it does but one has to be logged in so as to access the /blog.
+    public function check()
     {
         return response()->json([
-            'message' => 'Sorry this urlPath that you wrote does not exist!!',
+            'message' => 'Inside the blog as an Admin!!!',
         ]);
+
+        //  return view('blog.index')
+        //     ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 }
 

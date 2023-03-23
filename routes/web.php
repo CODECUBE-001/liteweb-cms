@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\FallbackController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 # Making the route for the home page 
 Route::get('/', [PagesController::class, 'index']);
 
+# Was just checking here to see maybe my message for the /blog endpoint was working, and yes it was
+Route::get('/blog', [PagesController::class, 'check']);
+
 # Defining the resource's urls
-//Route::resource('/blog', [PostsController::class, 'index']);
+// Route::resource('/blog', PostsController::class);
 
 # The Fallback Route
-Route::fallback( [PagesController::class, '__invoke']);
+Route::fallback([FallbackController::class, '__invoke']);
 
 #
